@@ -4,7 +4,7 @@ import 'package:state/home.dart';
 
 
 final nameProvider = Provider<String>((ref){
-return 'Atif Afridi';
+return 'Atif';
 });
 
 void main() {
