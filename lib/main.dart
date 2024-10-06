@@ -4,10 +4,20 @@ import 'package:state/home.dart';
 
 
 // declaring global data here :
-//provider
-final nameProvider = Provider<String>((ref){
-return 'Atif';
-});
+
+// we have 6 types of provider in fluter_riverpod package so , i will do all of them in this project 
+
+// 1) provider
+
+// final nameProvider = Provider<String>((ref){
+// return 'Atif';
+// });
+
+
+
+// 2) stateProvider
+
+
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
