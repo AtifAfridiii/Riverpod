@@ -8,6 +8,9 @@ class Home extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+
+    // listening data from another provider in different file 
+    
     final name = ref.watch(nameProvider);
     return Scaffold(
       appBar: AppBar(
