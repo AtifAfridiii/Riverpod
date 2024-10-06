@@ -16,8 +16,8 @@ import 'package:state/home.dart';
 
 
 // 2) stateProvider
-final nameProvider = StateProvider<String>((ref){
-return 'Atif';
+final nameProvider = StateProvider<String?>((ref){
+return null;
 });
 
 

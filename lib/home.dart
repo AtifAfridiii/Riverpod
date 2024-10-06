@@ -6,15 +6,28 @@ import 'package:state/main.dart';
 class Home extends ConsumerWidget {
   const Home({super.key});
 
+
+void OnSubmitted(WidgetRef ref , String value){
+
+ref.read(nameProvider.notifier).update((state) => value,);
+
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
     // listening data from another provider in different file 
-    
-    final name = ref.watch(nameProvider);
+    final name = ref.watch(nameProvider)??'';
     return Scaffold(
       appBar: AppBar(
         title: Text(name),
+      ),
+      body: Column(
+        children: [
+          TextField(
+            onSubmitted:(value)=> OnSubmitted(ref,value),
+          )
+        ],
       ),
     );
   }
