@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:state/home.dart';
+import 'package:state/user.dart';
 
 
 // declaring global data here :
@@ -22,9 +23,7 @@ import 'package:state/home.dart';
 
 // 3) Statenotifer and statenotifierProvider
 
-final nameProvider = StateProvider<String?>((ref){
-return null;
-});
+final nameProvider = StateNotifierProvider<UserNotifier , User>((ref) => UserNotifier(User(name: '', age: 10)),);
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));

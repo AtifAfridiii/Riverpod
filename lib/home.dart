@@ -3,13 +3,20 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:state/main.dart';
 
 
+
 class Home extends ConsumerWidget {
   const Home({super.key});
 
 
 void OnSubmitted(WidgetRef ref , String value){
 
-ref.read(nameProvider.notifier).update((state) => value,);
+ref.read(nameProvider.notifier).UpdateName(value);
+
+  }
+
+  void OnSubmittedAge(WidgetRef ref , String value){
+
+ref.read(nameProvider.notifier).Updateage(int.parse(value));
 
   }
 
@@ -17,16 +24,20 @@ ref.read(nameProvider.notifier).update((state) => value,);
   Widget build(BuildContext context, WidgetRef ref) {
 
     // listening data from another provider in different file 
-    final name = ref.watch(nameProvider)??'';
+    final user = ref.watch(nameProvider);
     return Scaffold(
       appBar: AppBar(
-        title: Text(name),
+        title: Text(user.name),
       ),
       body: Column(
         children: [
           TextField(
             onSubmitted:(value)=> OnSubmitted(ref,value),
-          )
+          ),
+          TextField(
+            onSubmitted:(value)=> OnSubmittedAge(ref,value),
+          ),
+         Text(user.age.toString()),
         ],
       ),
     );
