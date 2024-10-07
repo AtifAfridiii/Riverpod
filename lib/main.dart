@@ -23,7 +23,13 @@ import 'package:state/user.dart';
 
 // 3) Statenotifer and statenotifierProvider
 
-final nameProvider = StateNotifierProvider<UserNotifier , User>((ref) => UserNotifier(User(name: '', age: 10)),);
+// final nameProvider = StateNotifierProvider<UserNotifier , User>((ref) => UserNotifier(User(name: '', age: 10)),);
+
+// 4) Change notifier provider => usually its not recommended its better to user state_notifier_ provider
+
+ final nameProvider = ChangeNotifierProvider((ref) => UserNotifierChange());
+
+
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));

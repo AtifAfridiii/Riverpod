@@ -1,4 +1,5 @@
 
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class User {
@@ -73,6 +74,22 @@ void UpdateName(String Name){
 
 void Updateage(int age){
  state = state.copyWith(age: age);
+}
+
+}
+
+class UserNotifierChange extends ChangeNotifier{
+
+User user = User(name: '',age: 0);
+
+void UpdateName(String Name){
+  user= user.copyWith(name: Name);
+  notifyListeners();
+}
+
+void Updateage(int age){
+ user = user.copyWith(age: age);
+ notifyListeners();
 }
 
 
