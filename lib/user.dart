@@ -1,9 +1,8 @@
 
-import 'package:flutter/material.dart';
+
 
 // created user class 
 
-@immutable
 class User {
 
 late String name ;
