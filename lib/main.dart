@@ -16,10 +16,15 @@ import 'package:state/home.dart';
 
 
 // 2) stateProvider
+// final nameProvider = StateProvider<String?>((ref){
+// return null;
+//});
+
+// 3) Statenotifer and statenotifierProvider
+
 final nameProvider = StateProvider<String?>((ref){
 return null;
 });
-
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
