@@ -42,52 +42,54 @@ class Home extends ConsumerWidget {
     // listening data from another provider in different file 
     // final user = ref.watch(nameProvider).user;
 
-return ref.watch(nameProvider).when(data: (data) {
-  return Scaffold(
-      appBar: AppBar(
+// return ref.watch(nameProvider).when(data: (data) {
+//   return Scaffold(
+//       appBar: AppBar(
   
-      ),
-      body: Column(
-        children: [
-      Center(child: Text(data.name,style: TextStyle(fontSize: 31 , fontWeight: FontWeight.bold),),)
-        ],
-      ),
-    );
+//       ),
+//       body: Column(
+//         children: [
+//       Center(child: Text(data.name,style: TextStyle(fontSize: 31 , fontWeight: FontWeight.bold),),)
+//         ],
+//       ),
+//     );
 
-},
-error: (error, stackTrace) {
-  return Scaffold(
-      appBar: AppBar(
+// },
+// error: (error, stackTrace) {
+//   return Scaffold(
+//       appBar: AppBar(
    
-      ),
-      body: Column(
-        children: [
+//       ),
+//       body: Column(
+//         children: [
 
- Center(child: Text(error.toString()),)
+//  Center(child: Text(error.toString()),)
 
         
-        ],
-      ),
-    );
+//         ],
+//       ),
+//     );
 
-},
-loading: () {
-  return Scaffold(
-      appBar: AppBar(
+// },
+// loading: () {
+//   return Scaffold(
+//       appBar: AppBar(
     
-      ),
-      body: Column(
-        children: [
+//       ),
+//       body: Column(
+//         children: [
 
 
-Center(child: CircularProgressIndicator(color: Colors.black,),)
+// Center(child: CircularProgressIndicator(color: Colors.black,),)
        
-        ],
-      ),
-    );
+//         ],
+//       ),
+//     );
 
-},
-);
-   
+// },
+// );
+   return Scaffold(
+    body: Text('123'),
+   );
       }
 }

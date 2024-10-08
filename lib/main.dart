@@ -30,10 +30,23 @@ import 'package:state/user.dart';
 
 // 5) Future_provider  
 
-final nameProvider = FutureProvider((ref) async {
- return Userrepository().fetch_user_data();
-});
+// final nameProvider = FutureProvider((ref) async {
+//  return Userrepository().fetch_user_data();
+// });
 
+// 6) Stream_provider
+
+final nameProvider = StreamProvider((ref) async* {
+
+int i =0 ;
+List count  = [];
+for(i ;i<10;  i++){
+count.add(i);
+}
+
+yield count ;
+
+});
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
