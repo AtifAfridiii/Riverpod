@@ -39,27 +39,55 @@ class Home extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-
     // listening data from another provider in different file 
     // final user = ref.watch(nameProvider).user;
-    return Scaffold(
+
+return ref.watch(nameProvider).when(data: (data) {
+  return Scaffold(
       appBar: AppBar(
-     //   title: Text(user.name),
+  
+      ),
+      body: Column(
+        children: [
+      Center(child: Text(data.name),)
+        ],
+      ),
+    );
+
+},
+error: (error, stackTrace) {
+  return Scaffold(
+      appBar: AppBar(
+   
+      ),
+      body: Column(
+        children: [
+
+ Center(child: Text(error.toString()),)
+
+        
+        ],
+      ),
+    );
+
+},
+loading: () {
+  return Scaffold(
+      appBar: AppBar(
+    
       ),
       body: Column(
         children: [
 
 
-
-        //   TextField(
-        //     onSubmitted:(value)=> OnSubmitted(ref,value),
-        //   ),
-        //   TextField(
-        //     onSubmitted:(value)=> OnSubmittedAge(ref,value),
-        //   ),
-        //  Text(user.age.toString()),
+Center(child: CircularProgressIndicator(),)
+       
         ],
       ),
     );
-  }
+
+},
+);
+   
+      }
 }

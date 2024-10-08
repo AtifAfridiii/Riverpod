@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:state/home.dart';
 import 'package:state/user.dart';
-
-
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 // declaring global data here :
 
 // we have 6 types of provider in fluter_riverpod package so , i will do all of them in this project 
@@ -31,9 +31,17 @@ import 'package:state/user.dart';
 
 // 5) Future_provider  
 
-final nameProvider = FutureProvider((ref) {
+final nameProvider = FutureProvider((ref) async {
+  const url = 'https://jsonplaceholder.typicode.com/users/1';
   
-},);
+  // Fetch the data
+  final response = await http.get(Uri.parse(url));
+  
+  // Decode the JSON and map it to the User object
+  final data = json.decode(response.body); // Use json.decode here
+  return User.fromMap(data);
+});
+
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
