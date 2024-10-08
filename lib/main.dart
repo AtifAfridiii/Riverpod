@@ -38,13 +38,9 @@ import 'package:state/user.dart';
 
 final nameProvider = StreamProvider((ref) async* {
 
-int i =0 ;
-List count  = [];
-for(i ;i<10;  i++){
-count.add(i);
-}
 
-yield count ;
+
+yield [1,2,3,4,5,] ;
 
 });
 

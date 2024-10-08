@@ -89,7 +89,13 @@ class Home extends ConsumerWidget {
 // },
 // );
    return Scaffold(
-    body: Text('123'),
+    body: ref.watch(nameProvider).when(data: (data) {
+      Center(child: Text(data.toString()),);
+    }, error: (error, stackTrace) {
+      Center(child: Text(error.toString()),) ;
+    }, loading: () {
+      Center(child: CircularProgressIndicator(color: Colors.black,),);
+    },),
    );
       }
 }
