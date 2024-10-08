@@ -1,7 +1,4 @@
 
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 class User {
   final String name;
   final int age;
@@ -64,33 +61,37 @@ class User {
   int get hashCode => name.hashCode ^ age.hashCode;
 }
 
-class UserNotifier extends StateNotifier<User> {
+ // 3) stateNotifierProvider example code  here 
 
-  UserNotifier(super.state);
+// class UserNotifier extends StateNotifier<User> {
 
-void UpdateName(String Name){
- state = state.copyWith(name: Name);
-}
+//   UserNotifier(super.state);
 
-void Updateage(int age){
- state = state.copyWith(age: age);
-}
+// void UpdateName(String Name){
+//  state = state.copyWith(name: Name);
+// }
 
-}
+// void Updateage(int age){
+//  state = state.copyWith(age: age);
+// }
 
-class UserNotifierChange extends ChangeNotifier{
+// }
 
-User user = User(name: '',age: 0);
+ // 4) ChangeNotifer example code is here 
 
-void UpdateName(String Name){
-  user= user.copyWith(name: Name);
-  notifyListeners();
-}
+// class UserNotifierChange extends ChangeNotifier{
 
-void Updateage(int age){
- user = user.copyWith(age: age);
- notifyListeners();
-}
+// User user = User(name: '',age: 0);
+
+// void UpdateName(String Name){
+//   user= user.copyWith(name: Name);
+//   notifyListeners();
+// }
+
+// void Updateage(int age){
+//  user = user.copyWith(age: age);
+//  notifyListeners();
+// }
 
 
-}
+// }

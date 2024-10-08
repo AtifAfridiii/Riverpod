@@ -25,36 +25,39 @@ class Home extends ConsumerWidget {
 
 // Example 4 of Change_notifier_Provider code is here
 
-void OnSubmitted(WidgetRef ref , String value){
+// void OnSubmitted(WidgetRef ref , String value){
 
-ref.read(nameProvider).UpdateName(value);
+// ref.read(nameProvider).UpdateName(value);
 
-  }
+//   }
 
-  void OnSubmittedAge(WidgetRef ref , String value){
+//   void OnSubmittedAge(WidgetRef ref , String value){
 
-ref.read(nameProvider).Updateage(int.parse(value));
+// ref.read(nameProvider).Updateage(int.parse(value));
 
-  }
+//   }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
     // listening data from another provider in different file 
-    final user = ref.watch(nameProvider).user;
+    // final user = ref.watch(nameProvider).user;
     return Scaffold(
       appBar: AppBar(
-        title: Text(user.name),
+     //   title: Text(user.name),
       ),
       body: Column(
         children: [
-          TextField(
-            onSubmitted:(value)=> OnSubmitted(ref,value),
-          ),
-          TextField(
-            onSubmitted:(value)=> OnSubmittedAge(ref,value),
-          ),
-         Text(user.age.toString()),
+
+
+
+        //   TextField(
+        //     onSubmitted:(value)=> OnSubmitted(ref,value),
+        //   ),
+        //   TextField(
+        //     onSubmitted:(value)=> OnSubmittedAge(ref,value),
+        //   ),
+        //  Text(user.age.toString()),
         ],
       ),
     );

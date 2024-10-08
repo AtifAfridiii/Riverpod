@@ -25,11 +25,15 @@ import 'package:state/user.dart';
 
 // final nameProvider = StateNotifierProvider<UserNotifier , User>((ref) => UserNotifier(User(name: '', age: 10)),);
 
-// 4) Change notifier provider => usually its not recommended its better to user state_notifier_ provider
+// 4) Change notifier provider => usually its not recommended its better to user state_notifier_ provider because its muatable
 
- final nameProvider = ChangeNotifierProvider((ref) => UserNotifierChange());
+ //final nameProvider = ChangeNotifierProvider((ref) => UserNotifierChange());
 
+// 5) Future_provider  
 
+final nameProvider = FutureProvider((ref) {
+  
+},);
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
