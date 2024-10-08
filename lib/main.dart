@@ -38,7 +38,7 @@ final nameProvider = FutureProvider((ref) async {
   final response = await http.get(Uri.parse(url));
   
   // Decode the JSON and map it to the User object
-  final data = json.decode(response.body); // Use json.decode here
+  final data = json.decode(response.body); 
   return User.fromMap(data);
 });
 
