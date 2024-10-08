@@ -1,4 +1,5 @@
-
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 class User {
   final String name;
   final int age;
@@ -60,6 +61,27 @@ class User {
   @override
   int get hashCode => name.hashCode ^ age.hashCode;
 }
+
+// 5) example code here 
+
+class Userrepository {
+
+ Future<User> fetch_user_data()async{
+ const url = 'https://jsonplaceholder.typicode.com/users/1';
+  
+  // Fetch the data
+  final response = await http.get(Uri.parse(url));
+  
+  // Decode the JSON and map it to the User object
+  final data = json.decode(response.body); 
+  return User.fromMap(data);
+
+
+}
+
+
+}
+
 
  // 3) stateNotifierProvider example code  here 
 
