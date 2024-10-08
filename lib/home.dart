@@ -49,7 +49,7 @@ return ref.watch(nameProvider).when(data: (data) {
       ),
       body: Column(
         children: [
-      Center(child: Text(data.name),)
+      Center(child: Text(data.name,style: TextStyle(fontSize: 31 , fontWeight: FontWeight.bold),),)
         ],
       ),
     );
