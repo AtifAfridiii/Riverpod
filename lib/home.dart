@@ -88,6 +88,9 @@ class Home extends ConsumerWidget {
 
 // },
 // );
+
+// 6) code for stream provider here 
+
    return Scaffold(
     body: ref.watch(nameProvider).when(data: (data) {
      return Center(child: Text(data.toString()),);
