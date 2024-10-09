@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:state/home.dart';
-// import 'package:state/user.dart';
+import 'package:state/user.dart';
+
+
+// ******** Important Note : **********
+
+// All of the example done in this code are basic of riverpod providers lighting all the basic knowledge of riverpod 
+  
+// *****************************************************************************************************************
+
 
 // declaring global data here :
 
