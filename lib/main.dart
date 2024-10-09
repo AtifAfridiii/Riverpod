@@ -6,7 +6,7 @@ import 'package:state/user.dart';
 
 // ******** Important Note : **********
 
-// All of the example done in this code are basic of riverpod providers lighting all the basic knowledge of riverpod 
+// All of the example done in this code are basic of riverpod providers Enlighting all the basic knowledge of riverpod 
   
 // *****************************************************************************************************************
 
